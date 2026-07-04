@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | nova </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #667085;
+      --line: #e5e7eb;
+      --paper: #ffffff;
+      --soft: #f6f7f9;
+      --green: #1f7a5c;
+      --coral: #e76f51;
+      --gold: #f2b84b;
+      --shadow: 0 24px 70px rgba(17, 24, 39, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(16, 32, 51, 0.88), rgba(16, 32, 51, 0.44)),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85") center/cover fixed;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin-inline: auto;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 0;
+      color: #fff;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      color: #1f2937;
+      background: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .page {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      padding: 52px 0 82px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 560px;
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.15);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 560px;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .intro p {
+      max-width: 520px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1.12rem;
+    }
+
+    .details {
+      display: grid;
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .detail {
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .detail strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .detail span {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .form-card {
+      padding: 34px;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .form-card h2 {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+    }
+
+    .form-card p {
+      margin-bottom: 26px;
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: #344054;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px 15px;
+      color: var(--ink);
+      background: var(--soft);
+      font: inherit;
+      outline: none;
+      transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    textarea {
+      min-height: 138px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--green);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(31, 122, 92, 0.12);
+    }
+
+    button {
+      min-height: 50px;
+      border: 0;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--green);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 14px 30px rgba(31, 122, 92, 0.24);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(31, 122, 92, 0.3);
+    }
+
+    .footer {
+      padding: 24px 0;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 840px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      .nav,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      h1 {
+        font-size: 3.1rem;
+      }
+
+      .intro,
+      .form-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Nova Studio home">
+        <span class="brand-mark">N</span>
+        <span>Nova Studio</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="hello-world.html">Hello</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="container contact-grid">
+      <div class="intro">
+        <div>
+          <span class="eyebrow">Contact us</span>
+          <h1>Tell us what you want to build.</h1>
+          <p>Share a few details about your idea, timeline, or brand. We will help turn it into a clean, modern web experience.</p>
+        </div>
+
+        <div class="details">
+          <div class="detail">
+            <strong>Email</strong>
+            <span>hello@example.com</span>
+          </div>
+          <div class="detail">
+            <strong>Location</strong>
+            <span>Remote studio, available worldwide</span>
+          </div>
+          <div class="detail">
+            <strong>Typical reply</strong>
+            <span>Within one business day</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <h2>Start a project</h2>
+        <p>This form is ready for styling and layout. You can connect it to a backend later.</p>
+
+        <form>
+          <label>
+            Your name
+            <input type="text" name="name" placeholder="Alex Morgan" />
+          </label>
+
+          <label>
+            Email address
+            <input type="email" name="email" placeholder="alex@example.com" />
+          </label>
+
+          <label>
+            Project type
+            <select name="project-type">
+              <option>Website design</option>
+              <option>Brand identity</option>
+              <option>Landing page</option>
+              <option>Something else</option>
+            </select>
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" placeholder="Tell us a little about your project..."></textarea>
+          </label>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© 2026 Nova Studio. All rights reserved.</span>
+      <a href="about.html">Learn about us</a>
+    </div>
+  </footer>
+</body>
+</html>
